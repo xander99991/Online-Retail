@@ -8,7 +8,7 @@ Análisis completo del dataset **Online Retail** (UCI Machine Learning Repositor
 
 ---
 
-## 📦 Dataset
+## Dataset
 
 | | |
 |---|---|
@@ -20,7 +20,7 @@ Análisis completo del dataset **Online Retail** (UCI Machine Learning Repositor
 
 ---
 
-## 🧹 Parte 1: Adquisición y limpieza de datos
+## Parte 1: Adquisición y limpieza de datos
 
 - **Adquisición:** descarga automática del dataset con `requests` y lectura del Excel con `pandas`.
 - **Diagnóstico:** revisión de tipos, valores faltantes, estadísticas y cuantificación de cada problema antes de limpiar.
@@ -43,7 +43,7 @@ Análisis completo del dataset **Online Retail** (UCI Machine Learning Repositor
 
 ---
 
-## 🔍 Parte 2: Análisis exploratorio (EDA)
+## Parte 2: Análisis exploratorio (EDA)
 
 - **Lectura desde SQLite** a DataFrames de `pandas`.
 - **Descripción campo por campo** de las 11 columnas.
@@ -58,7 +58,7 @@ Análisis completo del dataset **Online Retail** (UCI Machine Learning Repositor
 
 ---
 
-## 📊 Parte 3: Visualización
+## Parte 3: Visualización
 
 | Gráfica | Técnica | La historia que cuenta |
 |---|---|---|
