@@ -1,0 +1,12 @@
+﻿columna,rol,descripcion,unidad,tipo_pandas,tipo_sqlite,valores_unicos,faltantes,pct_faltantes,minimo,maximo,ejemplo
+InvoiceNo,ID,Número de factura (6 dígitos). Agrupa las líneas de una misma compra.,—,object,TEXT,19646,0,0.0,—,—,536365
+StockCode,ID,"Código del producto (5 dígitos, a veces con una letra de variante).",—,object,TEXT,3907,0,0.0,—,—,85123A
+Description,Atributo,Nombre del producto.,—,object,TEXT,3998,0,0.0,—,—,WHITE HANGING HEART T-LIGHT HOLDER
+Quantity,Atributo,Unidades del producto en la línea (cantidad original).,unidades,int64,INTEGER,367,0,0.0,1,4800,6
+InvoiceDate,Atributo,Fecha y hora de emisión de la factura.,fecha y hora,datetime64[ns],TIMESTAMP,18220,0,0.0,2010-12-01 08:26:00,2011-12-09 12:50:00,2010-12-01 08:26:00
+UnitPrice,Atributo,Precio por unidad.,£ (libras),float64,REAL,499,0,0.0,0.04,649.5,2.55
+CustomerID,ID,Código del cliente (5 dígitos). Vacío si el cliente no está identificado.,—,Int64,INTEGER,4324,131418,25.28,12347,18287,17850
+Country,Atributo,País de residencia del cliente.,—,object,TEXT,38,0,0.0,—,—,United Kingdom
+QuantityCanceled,Derivada,Unidades anuladas por cancelaciones posteriores (creada en la limpieza).,unidades,int64,INTEGER,84,0,0.0,0,960,0
+QuantityNet,Derivada,Quantity − QuantityCanceled: unidades efectivamente vendidas.,unidades,int64,INTEGER,383,0,0.0,1,4800,6
+TotalPrice,Derivada,QuantityNet × UnitPrice: ingreso neto de la línea.,£ (libras),float64,REAL,4066,0,0.0,0.06,7144.72,15.3

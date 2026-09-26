@@ -1,0 +1,60 @@
+{
+  "titulo": "Online Retail (datos limpios)",
+  "descripcion": "Transacciones de una tienda online del Reino Unido, sin local físico, que vende principalmente regalos para toda ocasión; muchos clientes son mayoristas.",
+  "fuente": {
+    "repositorio": "UCI Machine Learning Repository",
+    "url": "https://archive.ics.uci.edu/dataset/352/online+retail",
+    "autor": "Daqing Chen, London South Bank University",
+    "fecha_donacion": "2015-11-05",
+    "licencia": "CC BY 4.0",
+    "articulo": "Chen, D., Sain, S. L., & Guo, K. (2012). Data mining for the online retail industry: A case study of RFM model-based customer segmentation using data mining. Journal of Database Marketing & Customer Strategy Management, 19(3), 197-208."
+  },
+  "cobertura_temporal": {
+    "desde": "2010-12-01 08:26:00",
+    "hasta": "2011-12-09 12:50:00",
+    "nota": "Diciembre de 2011 está incompleto (hasta el día 9)."
+  },
+  "unidad_de_observacion": "Una línea de producto dentro de una factura.",
+  "almacenamiento": {
+    "archivo": "online_retail.db",
+    "formato": "SQLite",
+    "tamano_mb": 57.3,
+    "tablas": {
+      "ventas": {
+        "filas": 519774,
+        "columnas": 11
+      },
+      "cancelaciones": {
+        "filas": 9251,
+        "columnas": 10
+      },
+      "metadatos": {
+        "filas": 11,
+        "descripcion": "Diccionario de datos de la tabla ventas"
+      }
+    }
+  },
+  "resumen": {
+    "facturas": 19646,
+    "clientes_identificados": 4324,
+    "productos": 3907,
+    "paises": 38,
+    "ingreso_total_gbp": 9763496.94
+  },
+  "calidad": {
+    "pct_lineas_sin_cliente": 25.28,
+    "nota_documentacion": "La documentación indica que no hay valores faltantes, pero en los datos originales falta el 24,93 % de CustomerID y el 0,27 % de Description."
+  },
+  "procesamiento": [
+    "Eliminación de 5.268 filas duplicadas exactas.",
+    "Separación de 9.251 líneas de cancelación (facturas con 'C') en la tabla cancelaciones.",
+    "Emparejamiento de cancelaciones con sus compras (mismo cliente y producto, compra anterior; primero pareja exacta en cantidad y precio). Se eliminaron 2.853 compras anuladas por completo y se descontaron las anulaciones parciales en QuantityCanceled.",
+    "Eliminación de 1 compra anulada con un ajuste manual (factura 556444).",
+    "Eliminación de 1.336 ajustes de inventario (cantidad negativa sin cliente ni precio).",
+    "Eliminación de 1.176 líneas con precio unitario ≤ 0.",
+    "Eliminación de 2.250 líneas de códigos que no son productos (envíos, comisiones, ajustes).",
+    "Conversión de CustomerID a entero, limpieza de espacios y creación de QuantityNet y TotalPrice."
+  ],
+  "fecha_procesamiento": "2026-09-26",
+  "autor_procesamiento": "Alexander Omar Fernández Pérez"
+}

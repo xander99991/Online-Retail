@@ -1,0 +1,54 @@
+DESCRIPCIÓN DEL DATASET: ONLINE RETAIL
+======================================
+
+1. ¿QUÉ ES?
+Es un conjunto de datos transaccional que registra todas las ventas de una tienda
+minorista online del Reino Unido, sin local físico, entre el 01/12/2010
+y el 09/12/2011. 
+
+Fuente: UCI Machine Learning Repository (Chen, Sain y Guo, 2012). Licencia CC BY 4.0.
+
+2. ¿QUÉ INFORMACIÓN CONTIENE?
+Cada fila es una línea de producto dentro de una factura, con 8 campos originales:
+  - InvoiceNo:   número de factura (las que empiezan con "C" son cancelaciones).
+  - StockCode:   código del producto.
+  - Description: nombre del producto.
+  - Quantity:    unidades compradas.
+  - InvoiceDate: fecha y hora de la compra.
+  - UnitPrice:   precio por unidad, en libras esterlinas.
+  - CustomerID:  código del cliente.
+  - Country:     país del cliente.
+Durante la limpieza se añadieron QuantityCanceled, QuantityNet y TotalPrice (ingreso neto).
+
+3. TAMAÑO (DATOS LIMPIOS)
+  - 541,909 filas originales; 519,774 líneas de venta tras la limpieza.
+  - 19,646 facturas, 4,324 clientes identificados,
+    3,907 productos y 38 países.
+  - Ingreso total: £9,763,496.94.
+  - 9,251 líneas de cancelación, guardadas en una tabla aparte.
+
+4. ¿CÓMO SE PUEDE DESCRIBIR?
+  - Es un negocio de productos baratos vendidos en volumen: el precio unitario
+    mediano es £2.08 y la cantidad mediana por línea es 4 unidades,
+    pero hay compras de hasta 4,800 unidades. Conviven compras minoristas
+    (27% de las líneas son de 1 unidad) y mayoristas (25% son de 12 o más).
+  - Una factura típica tiene 15 líneas y vale unas £299.
+  - Está muy concentrado geográficamente: Reino Unido reúne el 91.7% de las líneas
+    y el 84.7% del ingreso.
+  - Tiene una estacionalidad marcada: las ventas crecen desde septiembre y alcanzan su
+    máximo en 11/2011 (£1,435,647), por la temporada navideña.
+  - No hay ventas los sábados y las compras ocurren en horario de oficina (6:00 a 20:00).
+  - La frecuencia de compra es desigual: la mediana es de 2 facturas por cliente
+    y el 35% de los clientes compró una sola vez.
+  - El producto con más ingreso es "REGENCY CAKESTAND 3 TIER" y el que aparece en más
+    facturas es "WHITE HANGING HEART T-LIGHT HOLDER".
+
+5. CALIDAD DE LOS DATOS Y LIMITACIONES
+  - El 25.3% de las líneas no tiene cliente identificado (se conservaron para no
+    sesgar los análisis por producto, país y tiempo).
+  - Los datos originales incluían duplicados, cancelaciones, ajustes de inventario, precios en
+    cero o negativos y cargos que no son productos (envíos, comisiones); todos se trataron en la limpieza.
+  - Las cancelaciones no están vinculadas a su compra original en los datos: el emparejamiento
+    se reconstruyó y no es perfecto.
+  - Diciembre de 2011 está incompleto (hasta el día 9).
+  - La documentación oficial no reporta valores faltantes, aunque existen.
